@@ -10,7 +10,7 @@ namespace App1.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "일정";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamain-quickstart"));
         }
 

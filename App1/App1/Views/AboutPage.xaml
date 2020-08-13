@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.AboutPage"
              xmlns:vm="clr-namespace:App1.ViewModels"
+             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
@@ -29,7 +30,11 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
-
+                <controls:Calendar
+                    Month="5"
+                    Year="2019"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand" />
             </StackLayout>
         </ScrollView>
     </Grid>
