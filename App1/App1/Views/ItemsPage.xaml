@@ -7,38 +7,122 @@
              xmlns:model="clr-namespace:App1.Models"  
              x:Name="BrowseItemsPage">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
-    </ContentPage.ToolbarItems>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView x:Name="ItemsListView"
-                ItemsSource="{Binding Items}"
-                SelectionMode="None">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item">
-                        <Label Text="{Binding Text}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                        <Label Text="{Binding Description}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
-                                CommandParameter="{Binding .}">
-                            </TapGestureRecognizer>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </RefreshView>
+
+    <Grid BackgroundColor="#000000" >
+        <!--#region grid definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+        <!--#region Column 0-->
+        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="요일" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+
+        <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="날짜" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="조식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="3" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="중식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="4" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="석식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+
+        <Frame Grid.Row="5" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="날짜" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="6" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="조식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="7" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="중식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="8" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="석식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+
+        <Frame Grid.Row="9" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="날짜" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="10" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="조식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="11" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="중식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="12" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="석식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+
+        <Frame Grid.Row="13" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="날짜" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="14" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="조식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="15" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="중식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="16" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="석식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+
+        <Frame Grid.Row="17" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="날짜" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="18" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="조식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="19" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="중식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <Frame Grid.Row="20" Grid.Column="0" BackgroundColor="#dcf7f2" Padding="0, 0, 0, 0">
+            <Label Text="석식" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </Frame>
+        <!--#endregion-->
+        
+    </Grid>
 </ContentPage>
